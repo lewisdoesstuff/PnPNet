@@ -19,7 +19,7 @@ namespace PnPNet
     public static class Drivers
     {
         /// <summary>
-        /// pnputil /add-driver <filename.inf | *.inf> [/subdirs] [/install] [/reboot]
+        /// pnputil /add-driver &lt;filename.inf | *.inf&gt; [/subdirs] [/install] [/reboot]
         /// Adds a given driver to the system driver store.
         /// </summary>
         /// <param name="path">Path to .inf file or directory (subdirs = true)</param>
@@ -42,7 +42,7 @@ namespace PnPNet
         }
 
         /// <summary>
-        /// pnputil /delete-driver <oem#.inf> [/uninstall] [/force] [/reboot]
+        /// pnputil /delete-driver &lt;oem#.inf&gt; [/uninstall] [/force] [/reboot]
         /// Deltes a given driver package from the driver store.
         /// </summary>
         /// <param name="path">Path to oem driver file</param>
@@ -62,9 +62,9 @@ namespace PnPNet
 
         /// <summary>
         /// pnputil /enum-drivers
-        /// Returns a List<Driver> of all 3rd party drivers in the driver store.
+        /// Returns a List&lt;Driver&gt; of all 3rd party drivers in the driver store.
         /// </summary>
-        /// <returns>A List<Driver> of all drivers (3rd party) in the driver store.</returns>
+        /// <returns>A List&lt;Driver&gt; of all drivers (3rd party) in the driver store.</returns>
         public static List<Driver> EnumDrivers()
         {
             List<string> output = CommandLine.PnPString("/enum-drivers").Split(Environment.NewLine).ToList();
@@ -96,7 +96,7 @@ namespace PnPNet
         }
 
         /// <summary>
-        /// pnputil /disable-device <instance ID> | /deviceid <device ID> [/reboot]
+        /// pnputil /disable-device &lt;instance ID&gt; | /deviceid &lt;device ID&gt; [/reboot]
         /// Disable a device on the system.
         /// </summary>
         /// <param name="id">Instance or Device (with deviceid = true) ID of the device to be disabled</param>
@@ -114,7 +114,7 @@ namespace PnPNet
         }
 
         /// <summary>
-        /// pnputil /enable-device <instance ID> | /deviceid <device ID> [/reboot]
+        /// pnputil /enable-device &lt;instance ID&gt; | /deviceid &lt;device ID&gt; [/reboot]
         /// Enable a device on the system.
         /// </summary>
         /// <param name="id">Instance or Device (with deviceid = true) ID of the device to be enabled</param>
@@ -132,7 +132,7 @@ namespace PnPNet
         }
         
         /// <summary>
-        /// pnputil /restart-device <instance ID> | /deviceid <device ID> [/reboot]
+        /// pnputil /restart-device &lt;instance ID&gt; | /deviceid &lt;Device ID&gt; [/reboot]
         /// Restart a device on the system.
         /// </summary>
         /// <param name="id">Instance or Device (with deviceid = true) ID of the device to be restarted</param>
@@ -150,7 +150,7 @@ namespace PnPNet
         }
 
         /// <summary>
-        /// pnputil /remove-device <instance ID> | /deviceid <device ID> [/subtree] [/reboot]
+        /// pnputil /remove-device &lt;instance ID&gt; | /deviceid &lt;device ID&gt; [/subtree] [/reboot]
         /// Attempt to remove a device from the system.
         /// </summary>
         /// <param name="id">Instance or Device (with deviceid = true) ID of the device to be removed</param>
@@ -170,7 +170,7 @@ namespace PnPNet
         }
 
         /// <summary>
-        /// pnputil /scan-devices [/instanceid <instance ID>] [/async]
+        /// pnputil /scan-devices [/instanceid &lt;instance ID&gt;] [/async]
         /// Scan the system for any device hardware changes.
         /// </summary>
         /// <param name="instance">Scan the device subtree for changes</param>
@@ -184,5 +184,7 @@ namespace PnPNet
 
             return CommandLine.PnP(command);
         }
+
+
     }
 }
